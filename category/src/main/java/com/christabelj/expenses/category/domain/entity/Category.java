@@ -25,4 +25,8 @@ public class Category {
     @Column(name = "id", nullable = false, updatable = false)
     private UUID id;
 
+
+    @Column(name = "category_name", nullable = false, length = 100)
+    private String name;
+
 }
