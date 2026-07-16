@@ -15,6 +15,6 @@ public interface CategoryMapper {
     // update request
     Category toCategoryEntity(UpdateCategoryRequestDto requestDto);
 
-    // ########### entity to response DTO
+    // ########### entity to response DTO #########
     CategoryResponseDto toResponseDto(Category categoryEntity);
 }

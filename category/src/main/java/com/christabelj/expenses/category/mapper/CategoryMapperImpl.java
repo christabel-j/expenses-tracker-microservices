@@ -4,21 +4,30 @@ import com.christabelj.expenses.category.domain.dto.request.CreateCategoryReques
 import com.christabelj.expenses.category.domain.dto.request.UpdateCategoryRequestDto;
 import com.christabelj.expenses.category.domain.dto.response.CategoryResponseDto;
 import com.christabelj.expenses.category.domain.entity.Category;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CategoryMapperImpl implements CategoryMapper {
 
     @Override
     public Category toCategoryEntity(CreateCategoryRequestDto requestDto) {
-
+        return Category.builder()
+                .name(requestDto.name())
+                .build();
     }
 
     @Override
     public Category toCategoryEntity(UpdateCategoryRequestDto requestDto) {
-        return null;
+        return Category.builder()
+                .name(requestDto.name())
+                .build();
     }
 
     @Override
     public CategoryResponseDto toResponseDto(Category categoryEntity) {
-        return null;
+        return CategoryResponseDto.builder()
+                .id(categoryEntity.getId())
+                .name(categoryEntity.getName())
+                .build();
     }
 }
