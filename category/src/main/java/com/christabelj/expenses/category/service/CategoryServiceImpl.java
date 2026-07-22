@@ -8,17 +8,19 @@ import com.christabelj.expenses.category.exception.CategoryNotFoundException;
 import com.christabelj.expenses.category.mapper.CategoryMapper;
 import com.christabelj.expenses.category.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
 @RequiredArgsConstructor
-
+@Service
 public class CategoryServiceImpl implements CategoryService {
-    private CategoryMapper categoryMapper;
-    private CategoryRepository categoryRepository;
+    private final CategoryMapper categoryMapper;
+    private final CategoryRepository categoryRepository;
 
     @Override
     public CategoryResponseDto createCategory(CreateCategoryRequestDto requestDto) {
