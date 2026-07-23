@@ -4,7 +4,9 @@ import com.christabelj.expenses.expense.domain.dto.request.CreateExpenseRequestD
 import com.christabelj.expenses.expense.domain.dto.request.UpdateExpenseRequestDto;
 import com.christabelj.expenses.expense.domain.dto.response.ExpenseResponseDto;
 import com.christabelj.expenses.expense.domain.entity.Expense;
+import org.springframework.stereotype.Component;
 
+@Component
 public class ExpenseMapperImpl implements ExpenseMapper {
     @Override
     public Expense toEntity(CreateExpenseRequestDto requestDto) {
